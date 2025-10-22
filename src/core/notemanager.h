@@ -1,6 +1,7 @@
 #ifndef NOTEMANAGER_H
 #define NOTEMANAGER_H
 
+#include <QUuid>
 #include <QHash>
 #include <QVector>
 #include <memory.h>
@@ -12,10 +13,12 @@ class NoteManager
 {
 public:
     std::optional<INotePtr> getNote(const QString& id) const;
-    std::optional<INotePtr> createNote (const QString& title = "New Note");
+    std::optional<INotePtr> createNote (QString&& title, QString&& content, const QString&& id = QUuid::createUuid().toString(QUuid::WithoutBraces));
 
     bool removeNote(const QString& id);
     QVector<INotePtr> getAllNotes() const;
+
+    QVector<INotePtr> getNotesByTitle(const QString& title) const;
 
 private:
     QHash<QString, INotePtr> m_notes;

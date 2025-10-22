@@ -12,6 +12,10 @@ public:
                   const QString& title = QStringLiteral("New Note"),
                   const QString& content = QString());
 
+    explicit Note(QString&& id,
+                  QString&& title,
+                  QString&& content);
+
     ~Note() override = default;
 
 public:
