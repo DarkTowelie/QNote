@@ -1,5 +1,5 @@
 #include "notemanager.h"
-#include "note.h"
+#include "notes/note.h"
 
 std::optional<INotePtr> NoteManager::getNote(const QString &id) const
 {

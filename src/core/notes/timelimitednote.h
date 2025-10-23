@@ -6,9 +6,10 @@
 //Записка, автоматически удаляемая при наступлении заданного времени
 class TimeLimitedNote : public INote
 {
-public:
+    Q_OBJECT
     Q_DISABLE_COPY(TimeLimitedNote)
 
+public:
     explicit TimeLimitedNote(const QDateTime& deadline,
                              const QString& id = QString(),
                              const QString& title = QStringLiteral("New Note"),
@@ -25,7 +26,7 @@ public:
     inline QDateTime lastModified() const noexcept final { return m_lastModified; }
 
     void setTitle(const QString& title) final { emit modificationRejected(); }
-    void setContent(const QString& content) final {emit modificationRejected(); };
+    void setContent(const QString& content) final {emit modificationRejected(); }
 
 signals:
     //Сигнал, оповещающей о поптыке модифицировать записку

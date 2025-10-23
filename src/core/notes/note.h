@@ -6,8 +6,10 @@
 //Простая записка по умолчанию, с заголовком и подписью
 class Note : public INote
 {
-public:
+    Q_OBJECT
     Q_DISABLE_COPY(Note)
+
+public:
 
     explicit Note(const QString& id = QString(),
                   const QString& title = QStringLiteral("New Note"),
