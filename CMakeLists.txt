@@ -25,8 +25,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         src/core/interfaces/iplugin.h
         src/core/interfaces/inote.h
-        src/core/note.h src/core/note.cpp
+        src/core/notes/note.h src/core/notes/note.cpp
         src/core/notemanager.h src/core/notemanager.cpp
+        src/core/notes/timelimitednote.h src/core/notes/timelimitednote.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET QNote APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
