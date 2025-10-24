@@ -27,6 +27,8 @@ public:
     inline QString content() const noexcept final        { return m_content;      }
     inline QDateTime lastModified() const noexcept final { return m_lastModified; }
 
+    QString toString() const final;
+
     void setTitle(const QString& title) final;
     void setContent(const QString& content) final;
 

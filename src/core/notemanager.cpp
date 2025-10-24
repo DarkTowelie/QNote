@@ -55,3 +55,14 @@ QVector<INotePtr> NoteManager::getNotesByTitle(const QString &title) const
     }
     return res;
 }
+
+#include <QDebug>
+QString NoteManager::notesToStr() const
+{
+    //Временная заглушка
+    for(auto it = m_notes.constBegin(); it != m_notes.constEnd(); ++it)
+    {
+        qDebug() << it.value()->toString();
+    }
+    return "";
+}

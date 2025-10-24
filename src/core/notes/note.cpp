@@ -1,6 +1,7 @@
 #include "note.h"
 
 #include <QUuid>
+#include "../../jsonhelper.h"
 
 Note::Note(const QString &id, const QString &title, const QString &content) :
     m_id(id),
@@ -22,6 +23,18 @@ Note::Note(QString&& id, QString&& title, QString&& content) :
     if (m_id.isEmpty()) {
         m_id = QUuid::createUuid().toString(QUuid::WithoutBraces);
     }
+}
+
+QString Note::toString() const
+{
+    QHash<JsonKey, QString> values {
+        { JsonKey::id,           m_id },
+        { JsonKey::title,        m_title},
+        { JsonKey::content,      m_content},
+        { JsonKey::lastModified, m_lastModified.toString(Qt::DateFormat::ISODate)}
+    };
+
+    return JsonHelper::formJsonStr(values);
 }
 
 void Note::setTitle(const QString& title)

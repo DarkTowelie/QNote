@@ -12,6 +12,8 @@
 class NoteManager
 {
 public:
+    NoteManager(){}
+
     std::optional<INotePtr> getNote(const QString& id) const;
     std::optional<INotePtr> createNote (QString&& title, QString&& content, const QString&& id = QUuid::createUuid().toString(QUuid::WithoutBraces));
 
@@ -19,6 +21,7 @@ public:
     QVector<INotePtr> getAllNotes() const;
 
     QVector<INotePtr> getNotesByTitle(const QString& title) const;
+    QString notesToStr() const;
 
 private:
     QHash<QString, INotePtr> m_notes;

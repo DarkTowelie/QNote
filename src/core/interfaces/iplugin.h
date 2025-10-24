@@ -13,7 +13,7 @@ public:
 
     virtual QString name() const    = 0;
     virtual QString version() const = 0;
-    virtual void initialize() = 0;
+    virtual void initialize()       = 0;
 
 signals:
     void errorOccured(const QString& error);

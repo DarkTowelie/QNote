@@ -17,6 +17,8 @@ public:
     virtual QString content() const        = 0;
     virtual QDateTime lastModified() const = 0;
 
+    virtual QString toString() const = 0;
+
     virtual void setTitle(const QString& title) = 0;
     virtual void setContent(const QString& title) = 0;
 };
