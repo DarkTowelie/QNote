@@ -7,7 +7,7 @@ Application::Application(QObject *parent) : QObject(parent)
     m_noteManager = std::make_shared<NoteManager>();
     Q_ASSERT(m_noteManager);
 
-    m_mainWindow  = std::make_unique<MainWindow>();
+    m_mainWindow  = std::make_unique<MainWindow>(m_noteManager);
     Q_ASSERT(m_mainWindow);
 
     m_mainWindow->show();

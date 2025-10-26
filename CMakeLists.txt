@@ -31,6 +31,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         src/core/application.h src/core/application.cpp
         src/jsonhelper.h src/jsonhelper.cpp
         src/gui/notemodel.h src/gui/notemodel.cpp
+        src/gui/notewidget.h src/gui/notewidget.cpp src/gui/notewidget.ui
+
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET QNote APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

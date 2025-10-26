@@ -1,9 +1,12 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
+#include "notemodel.h"
+
+MainWindow::MainWindow(std::shared_ptr<NoteManager> noteManager, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , m_noteManager(noteManager)
 {
     ui->setupUi(this);
 }
