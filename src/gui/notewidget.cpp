@@ -1,14 +1,30 @@
 #include "notewidget.h"
-#include "ui_notewidget.h"
 
-NoteWidget::NoteWidget(QWidget *parent)
-    : QWidget(parent)
-    , ui(new Ui::NoteWidget)
+#include <QPushButton>
+
+NoteWidget::NoteWidget(INotePtr note, QWidget *parent)
+    : QFrame(parent)
+    , m_note(note)
 {
-    ui->setupUi(this);
+    setFrameStyle(QFrame::StyledPanel);
+    setLineWidth(1);
+    setMidLineWidth(0);
+
+    setupUI();
+    setupConnections();
+    updateDisplay();
 }
 
 NoteWidget::~NoteWidget()
 {
-    delete ui;
+}
+
+void NoteWidget::setupUI()
+{
+
+}
+
+void NoteWidget::setupConnections()
+{
+    connect()
 }
