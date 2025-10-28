@@ -8,6 +8,8 @@ namespace Ui {
 class NoteWidget;
 }
 
+class QLabel;
+class QTextEdit;
 class QPushButton;
 class NoteWidget : public QFrame
 {
@@ -36,8 +38,9 @@ protected:
     void paintEvent(QPaintEvent* event) override;
 
 private slots:
-    void onTitleChanged();
-    void onContentChanged();
+    void onTitleChanged()   {}
+    void onContentChanged() {}
+
     void onDeleteClicked();
 
 private:
@@ -50,6 +53,10 @@ private:
     INotePtr m_note;
     bool m_selected = false;
 
+    QLabel* m_titleLabel;
+    QLabel* m_timestampLabel;
+    QFrame* m_headerFrame;
+    QTextEdit* m_contentPreview;
     QPushButton* m_deleteButton;
 };
 
